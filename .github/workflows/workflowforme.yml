@@ -37,6 +37,7 @@ jobs:
           echo test, and deploy your project.
 
   test:
+    needs: build
     # Description
     name: Test
     runs-on: ubuntu-latest
