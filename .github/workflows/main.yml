@@ -2,15 +2,14 @@ on: [push]
 
 jobs:
   hello_world_job:
-    id: foo
-        uses: ikohub/Newone@2ee69e070d1755f7911267374334611066a92120
-        with:
-          who-to-greet: 'Iky'
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
-      
+      - id: foo
+        uses: ikohub/Newone@6c04e7aa8e4d5653ea50b55054d1894624e2cbaf
+        with:
+          who-to-greet: 'Iky'
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
